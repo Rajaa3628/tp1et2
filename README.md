@@ -1,51 +1,39 @@
-# Air Quality Stability — Projet Scientifique Reproductible
+# Air Quality Stability
 
-Projet TP12 : pipeline de qualité de l'air avec tests automatisés et exercices de stabilité numérique.
+Projet TP12 avec architecture simplifiée.
 
-## Prérequis
-
-- Python 3.10+ (ou Conda/Mamba)
-- Git
-
-## Installation de l'environnement
-
-```bash
-# Création de l'environnement (mamba ou conda)
-mamba env create -f environment.yml
-
-# Activation
-conda activate air_quality_stability
-```
-
-## Exécution en une commande
-
-```bash
-# Pipeline complet + tests unitaires
-python -m pytest tests/ -v && python src/main.py
-```
-
-## Exercices de stabilité numérique
-
-```bash
-python exercises/exercise_6_1_sommation.py
-python exercises/exercise_6_2_conditionnement.py
-python exercises/exercise_6_3_inversion_vs_solve.py
-```
-
-## Structure du projet
+## Structure
 
 ```
 tp/
-├── configs/config.yaml      # Configuration externalisée
-├── data/raw/                # Données brutes (exclues de Git)
-├── data/processed/            # Données traitées
-├── exercises/               # Exercices Partie 6
-├── src/                     # Code source modulaire
-├── tests/                   # Tests pytest
-├── environment.yml          # Dépendances Conda
-└── DOCUMENTATION.md         # Guide détaillé étape par étape
+├── app/              # Code métier
+├── settings/         # Configuration YAML
+├── dataset/          # Données CSV
+├── numerics/         # Exercices stabilité numérique
+├── spec/             # Tests pytest
+├── run.py            # Point d'entrée unique
+└── environment.yml
 ```
 
-## Données
+## Installation
 
-Placez vos fichiers CSV bruts dans `data/raw/`. Le fichier `air_quality.csv` d'exemple est ignoré par Git (voir `.gitignore`).
+```bash
+mamba env create -f environment.yml
+conda activate air_quality_stability
+```
+
+## Exécution
+
+```bash
+python -m pytest -v && python run.py
+```
+
+## Exercices numériques
+
+```bash
+python numerics/sommation.py
+python numerics/conditionnement.py
+python numerics/inversion.py
+```
+
+Voir `DOCUMENTATION.md` pour le détail de chaque étape.

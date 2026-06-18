@@ -1,41 +1,24 @@
-# Exclure les caches Python
+# Caches Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-*.egg-info/
-.eggs/
-dist/
-build/
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
 
-# Exclure le contenu des repertoires de donnees (conserver uniquement les fichiers d'architecture)
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-outputs/
+# Donnees (garder la structure via .gitkeep)
+dataset/*
+!dataset/.gitkeep
+results/
 *.csv
-*.parquet
-*.h5
-*.hdf5
 
-# Exclure les checkpoints Jupyter Notebooks
+# Jupyter
 .ipynb_checkpoints/
-*.ipynb_checkpoints
 
-# Environnements virtuels
-.env
+# Environnements
 .venv/
 venv/
 env/
 
-# IDE et OS
+# IDE / OS
 .vscode/
 .idea/
-*.swp
 .DS_Store
-Thumbs.db

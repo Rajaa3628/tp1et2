@@ -1,0 +1,17 @@
+project:
+  name: air_quality_stability
+  random_seed: 42
+  output_dir: results
+
+data:
+  path: dataset/air_quality.csv
+  target_column: pm25
+  test_size: 0.2
+
+preprocessing:
+  handle_missing: median
+  outlier_threshold: 1.5
+  scale_features: true
+
+model:
+  type: linear_regression
